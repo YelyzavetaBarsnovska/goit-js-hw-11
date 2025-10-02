@@ -33,11 +33,18 @@ form.addEventListener('submit', async event => {
     const data = await getImagesByQuery(query);
 
     if (data.hits.length === 0) {
-      iziToast.info({
-        title: 'No Results',
+      iziToast.error({
+        title: 'Error',
         message:
-          'Sorry, there are no images matching your search query. Please try again!',
+          'Sorry, there are no images matching your search query. Please, try again!',
         position: 'topRight',
+        timeout: 4000,
+        close: true,
+        progressBar: true,
+        backgroundColor: '#e74c3c',
+        messageColor: '#fff',
+        titleColor: '#fff',
+        icon: '❌',
       });
     } else {
       createGallery(data.hits);

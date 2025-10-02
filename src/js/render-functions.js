@@ -15,10 +15,10 @@ export function createGallery(images) {
           <img src="${image.webformatURL}" alt="${image.tags}" loading="lazy" />
         </a>
         <div class="image-stats">
-          <span>👍 ${image.likes}</span>
-          <span>👁️ ${image.views}</span>
-          <span>💬 ${image.comments}</span>
-          <span>⬇️ ${image.downloads}</span>
+          <span>Likes <strong>${image.likes}</strong></span>
+          <span>Views <strong>${image.views}</strong></span>
+          <span>Comments <strong>${image.comments}</strong></span>
+          <span>Downloads <strong>${image.downloads}</strong></span>
         </div>
       </li>
     `;
