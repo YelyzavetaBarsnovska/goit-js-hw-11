@@ -4,7 +4,7 @@ import 'simplelightbox/dist/simple-lightbox.min.css';
 let lightbox = new SimpleLightbox('.gallery a');
 
 const galleryContainer = document.querySelector('.gallery');
-const loader = document.getElementById('loader');
+const loader = document.getElementById('.loader');
 
 export function createGallery(images) {
   const markup = images
@@ -32,11 +32,14 @@ export function createGallery(images) {
 export function clearGallery() {
   galleryContainer.innerHTML = '';
 }
-
 export function showLoader() {
-  loader.classList.remove('is-hidden');
+  if (loader) {
+    loader.classList.remove('is-hidden');
+  }
 }
 
 export function hideLoader() {
-  loader.classList.add('is-hidden');
+  if (loader) {
+    loader.classList.add('is-hidden');
+  }
 }
